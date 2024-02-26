@@ -1,14 +1,14 @@
-function Task({ task, deleteTask }) {
+function Task({ text, category, deleteTask }) {
 
   const handleDelete = () => {
-    const taskToDelete = task.text
+    const taskToDelete = text
     deleteTask(taskToDelete)
   }
 
   return (
     <div className="task" >
-      <div className="label">{task.category}</div>
-      <div className="text">{task.text}</div>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
       <button className="delete" onClick={handleDelete}>X</button>
     </div>
   );

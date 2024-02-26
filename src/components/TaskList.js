@@ -1,10 +1,11 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList({ tasksToDisplay, deleteTask }) {
+function TaskList({ tasks, deleteTask }) {
   
- const tasksMapped = tasksToDisplay.map((task) => {
-    return <Task task={task} key={task.text}  deleteTask={deleteTask}/>
+  // safe navigator operator 
+ const tasksMapped = tasks?.map((task) => {
+    return <Task {...task} key={task.text}  deleteTask={deleteTask}/>
   })
 
   return (

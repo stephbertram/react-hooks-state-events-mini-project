@@ -8,7 +8,7 @@ function CategoryFilter({ categories, onSelectedCategory, categorySelection }) {
     onSelectedCategory(categoryValue)
   }
 
-  const categoriesMapped = categories.map((category) => 
+  const categoriesMapped = categories?.map((category) => 
     <button key={category} onClick={(handleClick)} className={category === categorySelection ? "selected" : ""} value={category}>{category}</button>)
 
   return (

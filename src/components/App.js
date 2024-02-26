@@ -25,7 +25,6 @@ const tasksToDisplay = taskList.filter((task) => {
  return categorySelection === "All" || task.category === categorySelection
 })
 
-// Start here
 const onTaskFormSubmit = (formData) => {
   const newTaskArray = [...taskList, formData]
   setTaskList(newTaskArray)
@@ -37,7 +36,7 @@ const onTaskFormSubmit = (formData) => {
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} onSelectedCategory={onSelectedCategory} categorySelection={categorySelection}/>
       <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit}/>
-      <TaskList tasksToDisplay={tasksToDisplay} deleteTask={deleteTask}/>
+      <TaskList tasks={tasksToDisplay} deleteTask={deleteTask}/>
     </div>
   );
 }
